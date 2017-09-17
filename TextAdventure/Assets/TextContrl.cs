@@ -30,7 +30,8 @@ public class TextContrl : MonoBehaviour {
 		else if (myState == States.interroom) 	{interroom ();} 
 		else if (myState == States.corridor_1) 	{corridor_1();}
 		else if (myState == States.room_1) 		{room_1();} 
-		else if (myState == States.bathroom) 	{bathroom();
+		else if (myState == States.bathroom) 	{bathroom();}
+		else if (myState == States.stairs_1) 	{stairs1();
 		}
 	}
 
@@ -108,6 +109,11 @@ public class TextContrl : MonoBehaviour {
 		text.text = "nothing in this room but you see door to stairs\n\n" +"press R to return to corridor, press s to go to staris";
 		if (Input.GetKeyDown (KeyCode.S)) {myState = States.stairs_1;}
 		if (Input.GetKeyDown (KeyCode.R)) {myState = States.corridor_1;}
+	}
+
+	void stairs1(){
+		text.text = "you are on the stairs to room\n\n" +"press R to return to room, press c to go to closet, l to go to lock";
+		if (Input.GetKeyDown (KeyCode.R)) {myState = States.room_1;}
 	}
 
 
