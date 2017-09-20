@@ -32,6 +32,7 @@ public class TextContrl : MonoBehaviour {
 		else if (myState == States.room_1) 		{room_1();} 
 		else if (myState == States.bathroom) 	{bathroom();}
 		else if (myState == States.stairs_1) 	{stairs1();
+
 		}
 	}
 
@@ -114,8 +115,30 @@ public class TextContrl : MonoBehaviour {
 	void stairs1(){
 		text.text = "you are on the stairs to room\n\n" +"press R to return to room, press c to go to closet, l to go to lock";
 		if (Input.GetKeyDown (KeyCode.R)) {myState = States.room_1;}
+		if (Input.GetKeyDown (KeyCode.C)) {myState = States.closet;}
+		if (Input.GetKeyDown (KeyCode.L)) {myState = States.lock_3;}
+	}
+	void closet(){
+		text.text = "you are in the closet \n\n" +"press R to return to stairs, press s to go to next stairs";
+		if (Input.GetKeyDown (KeyCode.R)) {myState = States.stairs_1;}
+		if (Input.GetKeyDown (KeyCode.S)) {myState = States.stairs_2;}
 	}
 
+	void lock3(){
+		text.text = "pick the lock \n\n" +"press R to return to stairs, press f to go to ge out";
+		if (Input.GetKeyDown (KeyCode.R)) {myState = States.stairs_1;}
+		if (Input.GetKeyDown (KeyCode.F)) {myState = States.freedom;}
+	}
+	void freedom(){
+		text.text = "you managed to get out\n\n" + "press s to start again";
+		if (Input.GetKeyDown (KeyCode.S)) {myState = States.cell;}
+	}
+
+	void stairs2(){
+		text.text = "you see a open window you can jump out\n\n"+"r to return to closet, press j to jump";
+		if (Input.GetKeyDown (KeyCode.R)) {myState = States.closet;}
+		if (Input.GetKeyDown (KeyCode.J)) {myState = States.freedom;}
+	}
 
 
 	#endregion
