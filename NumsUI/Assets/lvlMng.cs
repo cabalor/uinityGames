@@ -13,6 +13,7 @@ public class lvlMng : MonoBehaviour {
 
 	public void quit(){
 		Debug.Log ("game quited");
+		Application.Quit ();
 	}
 
 
