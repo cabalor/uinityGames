@@ -6,9 +6,8 @@ public class numbs : MonoBehaviour {
 
 	int min;
 	int max;
-	//int ran;
 	int guess;
-	public int maxShoots = 8;
+	public int maxShoots = 10;
 
 	public Text text;
 
@@ -20,14 +19,14 @@ public class numbs : MonoBehaviour {
 	void StartGame(){
 		min = 1;
 		max = 1000;
-		guess = 500;
-		//ran = Random.Range(1,1000);
+		nextGuess ();
 		max = max + 1;
 		
 	}
 	
 	void nextGuess(){
-		guess = (max + min)/2; //binary chop
+		//guess = (max + min)/2; //binary chop
+		guess = Random.Range(min,max+1);
 		text.text = guess.ToString();
 		maxShoots = maxShoots - 1;
 		if (maxShoots <= 0) {
