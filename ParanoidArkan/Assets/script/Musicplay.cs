@@ -3,16 +3,27 @@ using System.Collections;
 
 public class Musicplay : MonoBehaviour {
 
-	// Use this for initialization
+	static Musicplay instance = null;
+
+	Musicplay(){
+	}
+
 	void Start () {
 	
-		GameObject.DontDestroyOnLoad (gameObject);
-
-
+		if (instance != null) {
+			Destroy (gameObject);
+			print("one instance");
+		} else {
+			instance = this;
+			GameObject.DontDestroyOnLoad (gameObject);
+		}
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 	
+
 	}
+
+
 }
