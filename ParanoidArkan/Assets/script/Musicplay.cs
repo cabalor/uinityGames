@@ -1,26 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Musicplay : MonoBehaviour {
+public class Musicplay : MonoBehaviour
+{
 
 	static Musicplay instance = null;
 
-	Musicplay(){
+	Musicplay ()
+	{
 	}
 
-	void Start () {
-	
+	void Awake ()
+	{
 		if (instance != null) {
 			Destroy (gameObject);
-			print("one instance");
+			print ("one instance");
 		} else {
 			instance = this;
 			GameObject.DontDestroyOnLoad (gameObject);
 		}
 	}
-	
 
-	void Update () {
+	void Start ()
+	{
+	}
+
+	void Update ()
+	{
 	
 
 	}
