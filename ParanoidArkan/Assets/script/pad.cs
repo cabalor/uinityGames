@@ -11,7 +11,7 @@ public class pad : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 padPos = new Vector3 (3f, this.transform.position.y, 0f);
+		Vector3 padPos = new Vector3 (7f, this.transform.position.y, 0f);
 
 
 		float mousePosition = Input.mousePosition.x / Screen.width * 16;
