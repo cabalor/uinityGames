@@ -18,12 +18,13 @@ public class BallOberver : MonoBehaviour {
 
 		if (started == false) {
 			this.transform.position = pad.transform.position + padToBall;
-		}
+		
 		if(Input.GetMouseButtonDown(0)){
 			print ("mouse clicked");
-			this.rigidbody2D.velocity = new Vector2(2f , 15f);
+			this.rigidbody2D.velocity = new Vector2(-2f , 10f);
 			started = true;
 		}
 
-	}
+		}
+}
 }
