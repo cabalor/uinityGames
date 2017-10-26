@@ -3,11 +3,16 @@ using System.Collections;
 
 public class Colider : MonoBehaviour {
 
-	public lvlMng levelMng;
+	private lvlMng levelMng;
+
+	void Start(){
+		levelMng = GameObject.FindObjectOfType<lvlMng>();
+
+
+	}
 
 
 	void OnTriggerEnter2D(Collider2D trigger){
-		print("something");
 		levelMng.Load("winer");
 
 

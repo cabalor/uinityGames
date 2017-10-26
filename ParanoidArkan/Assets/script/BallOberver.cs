@@ -3,12 +3,12 @@ using System.Collections;
 
 public class BallOberver : MonoBehaviour {
 
-	public pad pad;
+	private pad pad;
 	private bool started = false;
 	private Vector3 padToBall;
 	// Use this for initialization
 	void Start () {
-	
+		pad = GameObject.FindObjectOfType<pad>();
 		padToBall = this.transform.position - pad.transform.position;
 
 	}
