@@ -16,6 +16,8 @@ public class lvlMng : MonoBehaviour {
 		Application.Quit ();
 	}
 
-
+	public void LoadNextLvl(){
+		Application.LoadLevel(Application.loadedLevel + 1);
+	}
 
 }

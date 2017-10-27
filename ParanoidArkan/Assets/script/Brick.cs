@@ -6,12 +6,12 @@ public class Brick : MonoBehaviour {
 
 	public int maxHp;
 	private int hits;
-
+	private lvlMng Manager;
 
 	// Use this for initialization
 	void Start () {
 		hits = 0;
-
+		Manager = GameObject.FindObjectOfType<lvlMng> ();
 
 	}
 	
@@ -25,9 +25,14 @@ public class Brick : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 
 			hits++;
-			print ("something2");
+		WinTheGame ();
+
 
 	}
 
+	void WinTheGame(){
+		Manager.LoadNextLvl ();
+	}
 
+	//TODO remove Win the game
 }

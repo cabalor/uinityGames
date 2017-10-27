@@ -13,7 +13,7 @@ public class Colider : MonoBehaviour {
 
 
 	void OnTriggerEnter2D(Collider2D trigger){
-		levelMng.Load("winer");
+		levelMng.Load("loose");
 
 
 	}
