@@ -7,7 +7,7 @@ public class Brick : MonoBehaviour {
 	public int maxHp;
 	private int hits;
 	private lvlMng Manager;
-
+	
 	// Use this for initialization
 	void Start () {
 		hits = 0;
@@ -18,21 +18,19 @@ public class Brick : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-
-
-
 	}
 	void OnCollisionEnter2D(Collision2D collision){
 
 			hits++;
-		WinTheGame ();
-
+		if (maxHp >= hits) {
+			Destroy (gameObject);
+		}
 
 	}
 
 	void WinTheGame(){
 		Manager.LoadNextLvl ();
 	}
-
-	//TODO remove Win the game
+	
+	//TODO remove Winthegame
 }
