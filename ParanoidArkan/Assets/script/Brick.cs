@@ -19,10 +19,10 @@ public class Brick : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnCollisionEnter2D(Collision2D collision){
+	void OnCollisionExit2D(Collision2D collision){
 
 			hits++;
-		if (maxHp >= hits) {
+		if (maxHp == hits) {
 			Destroy (gameObject);
 		}
 
