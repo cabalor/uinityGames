@@ -23,6 +23,13 @@ public class Brick : MonoBehaviour {
 	
 	}
 	void OnCollisionExit2D(Collision2D collision){
+		bool canBeDestroyed = (this.tag == "Breakable");
+		if (canBeDestroyed) {
+			HitsHandler ();
+		}
+	}
+
+	void HitsHandler(){
 		hits++;
 		maxHp = sprites.Length + 1; // maxhp equals number of spritees but we can change it to public and set it mnually
 		if (maxHp <= hits) {
