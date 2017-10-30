@@ -18,7 +18,6 @@ public class pad : MonoBehaviour {
 
 		padPos.x = Mathf.Clamp(mousePosition+3, 3f, 18f);
 
-		print (mousePosition);
 
 		this.transform.position = padPos;
 

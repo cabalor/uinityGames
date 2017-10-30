@@ -5,14 +5,20 @@ public class Brick : MonoBehaviour {
 
 	
 	public Sprite[] sprites;
+	public static int brickToBreak = 0;
 
 	private int hits;
 	private lvlMng Manager;
 	private int maxHp;
-
+	private bool canBeDestroyed;
 	
 	// Use this for initialization
 	void Start () {
+		canBeDestroyed = (this.tag == "Breakable");
+		if (canBeDestroyed) {
+			brickToBreak = brickToBreak + 1; // or bricktobreak++; couse of this we will know how many bricks to break we have
+		}
+
 		hits = 0;
 		Manager = GameObject.FindObjectOfType<lvlMng> ();
 
@@ -23,7 +29,6 @@ public class Brick : MonoBehaviour {
 	
 	}
 	void OnCollisionExit2D(Collision2D collision){
-		bool canBeDestroyed = (this.tag == "Breakable");
 		if (canBeDestroyed) {
 			HitsHandler ();
 		}
@@ -33,6 +38,7 @@ public class Brick : MonoBehaviour {
 		hits++;
 		maxHp = sprites.Length + 1; // maxhp equals number of spritees but we can change it to public and set it mnually
 		if (maxHp <= hits) {
+			brickToBreak--;
 			Destroy (gameObject);
 		} else {
 			LoadSprite();
@@ -47,10 +53,5 @@ public class Brick : MonoBehaviour {
 
 		}
 	}
-
-	void WinTheGame(){
-		Manager.LoadNextLvl ();
-	}
 	
-	//TODO remove Winthegame
 }
