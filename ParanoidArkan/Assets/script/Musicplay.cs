@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Musicplay : MonoBehaviour
-{
+public class Musicplay : MonoBehaviour {
 
 	static Musicplay instance = null;
 
@@ -27,8 +26,6 @@ public class Musicplay : MonoBehaviour
 
 	void Update ()
 	{
-	
-
 	}
 
 
