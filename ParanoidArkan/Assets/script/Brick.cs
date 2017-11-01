@@ -40,6 +40,7 @@ public class Brick : MonoBehaviour {
 		if (maxHp <= hits) {
 			brickToBreak--;
 			Destroy (gameObject);
+			Manager.LastBrick();
 		} else {
 			LoadSprite();
 		}

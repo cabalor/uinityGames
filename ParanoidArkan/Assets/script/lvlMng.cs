@@ -20,4 +20,11 @@ public class lvlMng : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevel + 1);
 	}
 
+	public void LastBrick(){
+		if (Brick.brickToBreak <= 0) {
+			LoadNextLvl();
+		}
+	}
+
+
 }
