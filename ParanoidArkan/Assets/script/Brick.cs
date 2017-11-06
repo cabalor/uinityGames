@@ -29,7 +29,7 @@ public class Brick : MonoBehaviour {
 	
 	}
 	void OnCollisionExit2D(Collision2D collision){
-		AudioSource.PlayClipAtPoint (br, transform.position);
+		AudioSource.PlayClipAtPoint (br, transform.position,0.4f);
 		if (canBeDestroyed) {
 			HitsHandler ();
 		}
