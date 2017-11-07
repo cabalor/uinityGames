@@ -4,19 +4,16 @@ using System.Collections;
 public class lvlMng : MonoBehaviour {
 
 	public void Load(string lvl){
-
-		Debug.Log ("lvl loaded " + lvl);
-
+		Brick.brickToBreak = 0;
 		Application.LoadLevel(lvl);
-
 	}
 
 	public void quit(){
-		Debug.Log ("game quited");
 		Application.Quit ();
 	}
 
 	public void LoadNextLvl(){
+		Brick.brickToBreak = 0;
 		Application.LoadLevel(Application.loadedLevel + 1);
 	}
 

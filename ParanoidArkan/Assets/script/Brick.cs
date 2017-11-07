@@ -40,8 +40,9 @@ public class Brick : MonoBehaviour {
 		maxHp = sprites.Length + 1; // maxhp equals number of spritees but we can change it to public and set it mnually
 		if (maxHp <= hits) {
 			brickToBreak--;
-			Destroy (gameObject);
+			Debug.Log(brickToBreak);
 			Manager.LastBrick();
+			Destroy (gameObject);
 		} else {
 			LoadSprite();
 		}

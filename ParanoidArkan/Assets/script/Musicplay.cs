@@ -19,7 +19,6 @@ public class Musicplay : MonoBehaviour {
 			GameObject.DontDestroyOnLoad (gameObject);
 		}
 	}
-
 	void Start ()
 	{
 	}

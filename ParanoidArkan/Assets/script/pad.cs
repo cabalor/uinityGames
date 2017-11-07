@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class pad : MonoBehaviour {
-
-
-
+	
 	public bool testPlay = false;
 	private BallOberver ball;
 
@@ -13,9 +11,7 @@ public class pad : MonoBehaviour {
 
 		ball = GameObject.FindObjectOfType<BallOberver>();
 	}
-
-
-
+	
 	// Update is called once per frame
 	void Update () {
 		if (testPlay.Equals (false)) {
