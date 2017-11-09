@@ -51,9 +51,10 @@ public class Brick : MonoBehaviour {
 
 	void LoadSprite(){
 		int arrIndx = hits - 1; // it should give you 0, coude arrays are numberd from 0, and when you want looad a sprite form array you have to begin from start of array.
-		if(sprites [arrIndx]){
-		this.GetComponent<SpriteRenderer> ().sprite = sprites [arrIndx];  //get component load a component in this case Sprite Renderer which is visible in gui. and this. is Brick, on particular Brick.
-
+		if (sprites [arrIndx] != null) {
+			this.GetComponent<SpriteRenderer> ().sprite = sprites [arrIndx];  //get component load a component in this case Sprite Renderer which is visible in gui. and this. is Brick, on particular Brick.
+		} else {
+			Debug.LogError("Game need a sprite");
 		}
 	}
 	

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pad : MonoBehaviour {
+public class Pad : MonoBehaviour {
 	
 	public bool testPlay = false;
 	private BallOberver ball;
