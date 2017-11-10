@@ -6,6 +6,7 @@ public class Brick : MonoBehaviour {
 	public AudioClip br;
 	public Sprite[] sprites;
 	public static int brickToBreak = 0;
+	public GameObject smoke;
 
 	private int hits;
 	private lvlMng Manager;
@@ -42,6 +43,8 @@ public class Brick : MonoBehaviour {
 			brickToBreak--;
 			Debug.Log(brickToBreak);
 			Manager.LastBrick();
+			GameObject dym = (GameObject)Instantiate(smoke, gameObject.transform.position, Quaternion.identity); // gameobjetc.transform.position - its position of brick we  can use also as GameObject at the end of this line inset of cating (GameObject)
+			dym.particleSystem.startColor = gameObject.GetComponent<SpriteRenderer>().color;
 			Destroy (gameObject);
 		} else {
 			LoadSprite();

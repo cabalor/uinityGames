@@ -26,7 +26,7 @@ public class BallOberver : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 
-		Vector2 addToBounce = new Vector2 (Random.Range(0f,0.3f), (Random.Range(0f,0.3f)));
+		Vector2 addToBounce = new Vector2 (Random.Range(0.1f,0.5f), (Random.Range(0.1f,0.5f)));
 
 		if (started) {
 			audio.Play ();
